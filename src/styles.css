@@ -140,5 +140,54 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Rubik", ui-sans-serif, system-ui, sans-serif;
   }
 }
+
+/* ---- Resume document ---- */
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  font-family: "Rubik", ui-sans-serif, system-ui, sans-serif;
+}
+
+.resume-serif {
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.resume-heading {
+  font-family: "Source Serif 4", Georgia, serif;
+  color: var(--resume-accent, #2e3a59);
+  border-color: var(--resume-accent, #2e3a59);
+}
+
+.resume-chip {
+  border-color: color-mix(in oklab, var(--resume-accent, #2e3a59) 35%, transparent);
+  color: #262626;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-area {
+    display: block;
+    overflow: visible;
+  }
+
+  .resume-page {
+    box-shadow: none;
+    width: 210mm;
+  }
+}
+
