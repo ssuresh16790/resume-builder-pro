@@ -126,16 +126,9 @@ export function ResumeDocument({ data }: { data: Resume }) {
                 {data.skills.map((g) => (
                   <div key={g.id} className="mb-2.5 break-inside-avoid">
                     <p className="mb-1 text-[9.5px] font-semibold">{g.label}</p>
-                    <div className="flex flex-wrap gap-1">
-                      {g.items.filter(Boolean).map((s, i) => (
-                        <span
-                          key={i}
-                          className="resume-chip rounded-[3px] border px-1.5 py-[2px] text-[8px] leading-none"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
+                    <p className="text-[8.2px] leading-[1.55] text-neutral-700">
+                      {g.items.filter(Boolean).join(", ")}
+                    </p>
                   </div>
                 ))}
               </section>
